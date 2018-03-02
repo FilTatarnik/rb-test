@@ -1,111 +1,60 @@
 <p id="notice"><%= notice %></p>
 
-<h1>a robert brysiewicz inc, co.</h1>
-
 <!-- from here -->
+<% @items.each do |item| %>
+  <table class="item">
 
-<table class="item">
-  <thead>
-    <tr>
-      <br>
+
+    <thead class="item-head">
       <th>Item number</th>
-     
-      <th>Sap number</th>
-      <th>Tr number</th>
-      <th>Rb number</th>
-      <th>Name </th>
-      <th>Machine</th>
-      <th>Material</th>
-      <th>Finish</th>
-      <th>Lead time</th>
-      <th>Additional</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @items.each do |item| %>
-      <tr>
-        <td>
-          <%= item.item_number %>
-          <%= image_tag item.avatar.url(:thumb) %>
-        </td>
-        
-        <td><%= item.sap_number %></td>
-        <td><%= item.tr_number %></td>
-        <td><%= item.rb_number %></td>
-        <td><%= item.name %></td>
-        <td><%= item.machine %></td>
-        <td><%= item.material %></td>
-        <td><%= item.finish %></td>
-        <td><%= item.lead_time %></td>
-        <td><%= item.additional %></td>
-      </tr>
-      <tr>
+      <th>Sap #</th> 
+      <td><%= item.sap_number %></td>
+      <th>Tr card #</th>
+      <td><%= item.tr_number %></td>
+      <th>Rb #</th>
+      <td><%= item.rb_number %></td>
+    </thead>
+
+    <tbody class="col-md-8">
+
+      <table class="name list"><th>Name:</th>
+      <td><%= item.name %></td></table>
+
+      <table class="machine"><th>Machine:</th>
+      <td><%= item.machine %></td></table>
+
+      <table class="material"><th>Material:</th>
+      <td><%= item.material %></td></table>
+
+      <table class="finish"><th>Finish:</th>
+      <td><%= item.finish %></td></table>
+
+      <table class="lead"><th>Lead time:</th>
+      <td><%= item.lead_time %></td></table>
+
+      <table class="additional"><th>Additional:</th>
+      <td><%= item.additional %></td></table>
+
+      <table>
         <td><%= link_to 'Show', item, class: "show" %></td>
         <td><%= link_to 'Edit', edit_item_path(item), class: "show"%></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, class: "show"%></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
- 
+        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Sure about this?' }, class: "show"%></td>
+      </table>
+
+    </tbody>
+    <br>
+    <br>
+    <br>
+  </table>   
+<% end %>
+
+
 <!-- to here -->
 
-
-<br>
-
 <%= link_to 'New Item', new_item_path %>
-<!-- 
-<div>
-
-  
-    <table class="table-one">
-      <thead>
-        <th>1</th>
-      </thead>
-      <tbody>
-        <td>
-          Picture
-        </td>
-      </tbody>
-    </table>
-
-    <table class="table-two">
-      <thead>
-        <tr>
-          <th>SAP#</th>
-          <th>TR CARD #</th>
-          <th>RB #</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>13242398</td>
-          <td>665439892</td>
-          <td>RB123533</td>
-        </tr>
-      </tbody>
-    </table>
 
 
-  <h3 class="description">DESCRIPTION</h3>
 
-  <table class="table-three">
-    <thead>
-      <th>Name:</th>
-      <th>Machine Relevance:</th>
-      <th>Material:</th>
-      <th>Finish:</th>
-      <th>Lead Time:</th>
-      <th>Additional Notes:</th>
-    </thead>
-    <tbody>
-      <td>Roller</td>
-      <td>Jagenberg</td>
-      <td>Steel</td>
-      <td>Chrome</td>
-      <td>4</td>
-      <td>Drawing Available</td>
-    </tbody>
-  </table>
 
-</div> -->
+
+

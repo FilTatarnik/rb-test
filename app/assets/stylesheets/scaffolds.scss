@@ -10,7 +10,7 @@ body {
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
-  line-height: 18px;
+  line-height: 15px;
 }
 
 pre {
@@ -31,20 +31,20 @@ a {
     background-color: #000;
   }
 }
+div.random{
+  th {
+    padding-bottom: 5px;
+  }
 
-th {
-  padding-bottom: 5px;
-}
-
-td {
-  padding: 0 5px 7px;
-}
-
-div {
-  &.field, &.actions {
-    margin-bottom: 10px;
+  td {
+    padding: 0 5px 7px;
   }
 }
+  div {
+    &.field, &.actions {
+      margin-bottom: 10px;
+    }
+  }
 
 #notice {
   color: green;
